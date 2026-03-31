@@ -119,7 +119,7 @@ export const VikingManagementPreview = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {cards.map((card, i) => (
-          <div key={i} className="rounded-2xl overflow-hidden border border-foreground/10">
+          <div key={i} className="rounded-2xl overflow-hidden border-2 flex flex-col" style={{ borderColor: card.badgeColor }}>
             <div className="py-5 text-center" style={{ background: card.headerBg }}>
               <p className="font-montserrat font-bold text-white text-2xl">{card.capital}</p>
               <p className="text-white/80 text-xs font-montserrat mt-1">{card.lotSize}</p>
