@@ -216,6 +216,7 @@ const RobotReportModal = ({ robotName, onClose }: { robotName: string; onClose: 
             </button>
           ))}
         </div>
+        )}
 
         {/* Robot title */}
         <div className="p-4 border-b border-foreground/10 flex items-center gap-4">
