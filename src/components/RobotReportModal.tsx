@@ -458,6 +458,7 @@ const RobotReportModal = ({ robotName, onClose }: { robotName: string; onClose: 
             </button>
           )}
         </div>
+        )}
       </div>
     </div>
   );
