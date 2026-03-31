@@ -29,8 +29,9 @@ const PricingSection = () => {
             <div className="bg-[#1a5fa8] px-5 py-4 text-center">
               <p className="font-montserrat font-bold text-white text-base">Semi-Annual</p>
             </div>
-            <div className="bg-[#2d7dd2] px-5 py-6 flex flex-col gap-4" style={{boxShadow:'0 6px 0 #0d3d6e',borderRadius:'0 0 16px 16px'}}>
+            <div className="bg-[#2d7dd2] px-5 py-6 flex flex-col gap-4 flex-1" style={{boxShadow:'0 6px 0 #0d3d6e',borderRadius:'0 0 16px 16px'}}>
               <div className="text-center">
+                <p className="font-opensans text-white/60 text-xs">Starting from:</p>
                 <p className="font-montserrat font-bold text-white text-3xl">$149</p>
                 <p className="font-opensans text-white/70 text-xs mt-1">for 6 months</p>
               </div>
