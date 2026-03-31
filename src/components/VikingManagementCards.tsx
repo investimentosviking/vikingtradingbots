@@ -212,7 +212,7 @@ export const VikingManagementPanel = ({
           </button>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 items-stretch">
         {displayCards.map((card, ci) => (
           <div key={ci} className="rounded-2xl overflow-hidden border border-foreground/10">
             <div className="py-5 text-center" style={{ background: card.headerBg }}>
