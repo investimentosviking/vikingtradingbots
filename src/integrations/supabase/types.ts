@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clients: {
+        Row: {
+          created_at: string
+          email: string | null
+          expiry_date: string | null
+          id: string
+          name: string
+          notes: string | null
+          origin: string | null
+          plan: string | null
+          robot: string | null
+          status: Database["public"]["Enums"]["client_status"]
+          updated_at: string
+          whatsapp: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          expiry_date?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          origin?: string | null
+          plan?: string | null
+          robot?: string | null
+          status?: Database["public"]["Enums"]["client_status"]
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          expiry_date?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          origin?: string | null
+          plan?: string | null
+          robot?: string | null
+          status?: Database["public"]["Enums"]["client_status"]
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +67,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      client_status: "lead" | "trial" | "active" | "inactive" | "expired"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +194,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      client_status: ["lead", "trial", "active", "inactive", "expired"],
+    },
   },
 } as const
