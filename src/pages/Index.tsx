@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import ProductsSection from '@/components/ProductsSection';
 import { VikingManagementPreview } from '@/components/VikingManagementCards';
+import LivePerformance from '@/components/LivePerformance';
 import PricingSection from '@/components/PricingSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
@@ -24,6 +25,7 @@ const Index = () => {
         <section id="viking-management" className="py-16 px-6 bg-background scroll-mt-20">
           <VikingManagementPreview />
         </section>
+        <LivePerformance />
         <PricingSection />
         <CtaSection />
         <Footer />
