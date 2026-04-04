@@ -60,7 +60,7 @@ const Hero = ({ onStartFree }: HeroProps) => (
             Start Free
           </button>
           <a
-            href="#products"
+            href="#live-performance"
             className="relative px-8 py-3 rounded-full font-montserrat font-bold text-sm
               border-2 border-primary text-foreground
               shadow-[0_4px_0_0_hsl(74,100%,33%,0.3),0_8px_24px_hsl(74,100%,43%,0.1)]
