@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, TrendingUp, Shield } from 'lucide-react';
+
 
 const LivePerformance = () => {
   const [activeTab, setActiveTab] = useState<'btcusd' | 'dax'>('btcusd');
