@@ -117,6 +117,7 @@ const ProductsSection = () => {
           <span className="inline-block bg-primary/10 text-primary font-montserrat text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
             Products
           </span>
+          <span id="strategy" className="block -mt-20 pt-20" aria-hidden="true"></span>
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-foreground tracking-[-0.02em] mb-4">
             Intelligent Automation with Professional Trade Management
           </h2>
