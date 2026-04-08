@@ -75,7 +75,7 @@ const LivePerformance = () => {
                 </p>
                 {card.enabled ? (
                   
-                    href={card.link}
+                    <a href={card.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-montserrat font-bold text-sm px-5 py-3 rounded-xl hover:brightness-110 transition-all"
