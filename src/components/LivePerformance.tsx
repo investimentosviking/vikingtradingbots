@@ -44,7 +44,6 @@ const LivePerformance = () => {
             Audited and public results via FX Blue — unfiltered, unedited.
           </p>
         </div>
-
         <div className="flex justify-center mb-10">
           <iframe
             src="//www.fxblue.com/fxbluechart.aspx?c=ch_cumulativeprofit&id=Vikingtradingbots"
@@ -55,7 +54,6 @@ const LivePerformance = () => {
             title="FX Blue Live Performance"
           />
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 items-stretch">
           {cards.map((card, i) => (
             <div
