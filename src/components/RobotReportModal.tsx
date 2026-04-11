@@ -249,10 +249,10 @@ const RobotReportModal = ({ robotName, onClose }: { robotName: string; onClose: 
           </div>
         </div>
 
-        {/* Viking Management Panel */}
-        {activeTab === 'management' && (
+        {/* Viking Management Panel - shown in View and Manage */}
+        {(activeTab === 'view' || (activeTab === 'manage' && authenticated)) && (
           <div className="p-4 border-b border-foreground/10">
-            <VikingManagementPanel robotName={robotName} isManageMode={false} />
+            <VikingManagementPanel robotName={robotName} isManageMode={activeTab === 'manage' && authenticated} />
           </div>
         )}
 
