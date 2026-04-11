@@ -77,7 +77,7 @@ const AdminPanel = ({ onClose }: AdminPanelProps) => {
   const expiringSoon = clients.filter(c => c.expiry_date && new Date(c.expiry_date) <= in7Days && new Date(c.expiry_date) >= now && c.status === 'active').length;
 
   const updateField = async (id: string, field: string, value: string) => {
-    await supabase.from('clients').update({ [field]: value }).eq('id', id);
+    await supabase.from('clients').update({ [field]: value } as any).eq('id', id);
     setClients(prev => prev.map(c => c.id === id ? { ...c, [field]: value } : c));
   };
 
