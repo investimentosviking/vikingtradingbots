@@ -65,11 +65,11 @@ const StartFreeModal = ({ onClose }: StartFreeModalProps) => {
       const { error: dbError } = await supabase.from('clients').insert({
         name: form.name.trim(),
         email: form.email.trim().toLowerCase(),
-        country: form.country.trim(),
-        broker: form.broker.trim(),
-        mt5_account: mt5Number,
+        whatsapp: form.whatsapp.trim(),
         notes: [
-          `WhatsApp: ${form.whatsapp.trim()}`,
+          `Country: ${form.country.trim()}`,
+          `Broker: ${form.broker.trim()}`,
+          `MT5: ${mt5Number}`,
           `Experience: ${form.experience}`,
           form.message.trim() ? `Message: ${form.message.trim()}` : '',
         ].filter(Boolean).join('\n'),
