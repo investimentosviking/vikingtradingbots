@@ -61,7 +61,7 @@ const saveRobotData = (robotName: string, year: number, data: ReportData[]) => {
 };
 
 const RobotReportModal = ({ robotName, onClose }: { robotName: string; onClose: () => void }) => {
-  const [activeTab, setActiveTab] = useState<'view' | 'manage' | 'management'>('view');
+  const [activeTab, setActiveTab] = useState<'view' | 'manage'>('view');
   const [authenticated, setAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState(false);
