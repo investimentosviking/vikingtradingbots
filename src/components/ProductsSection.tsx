@@ -39,6 +39,7 @@ interface RobotItem {
   comingSoon?: boolean;
   flag?: string;
   bitcoinIcon?: boolean;
+  goldIcon?: boolean;
 }
 
 const portfolioRobots: RobotItem[] = [
