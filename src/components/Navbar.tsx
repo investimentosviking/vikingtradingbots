@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Management', href: '#viking-management' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
+  { label: 'Beginner', href: '#beginner' },
 ];
 
 interface NavbarProps {

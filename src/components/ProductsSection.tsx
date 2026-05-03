@@ -4,7 +4,7 @@ import RobotReportModal from './RobotReportModal';
 import vikingAlphaBtcusd from '@/assets/viking-alpha-btcusd.png';
 import vikingAlphaDax from '@/assets/viking-alpha-dax.png';
 import forexComingSoon from '@/assets/forex-coming-soon.png';
-import nationalComingSoon from '@/assets/national-coming-soon.png';
+
 
 const tools = [
   {
@@ -37,17 +37,15 @@ interface RobotItem {
   subtitle: string;
   image: string;
   comingSoon?: boolean;
+  flag?: string;
+  bitcoinIcon?: boolean;
 }
 
-const internationalRobots: RobotItem[] = [
-  { id: 'BTC/USD', name: 'Viking Alpha', subtitle: 'Ragnar Edition – BTC/USD', image: vikingAlphaBtcusd },
-  { id: 'DAX', name: 'Viking Alpha', subtitle: 'Ivar Edition – DAX', image: vikingAlphaDax },
-  { id: 'FOREX', name: 'Viking Alpha', subtitle: 'FOREX', image: forexComingSoon, comingSoon: true },
-];
-
-const nationalRobots: RobotItem[] = [
-  { id: 'Mini Índice', name: 'Mini Índice', subtitle: 'Coming Soon', image: nationalComingSoon, comingSoon: true },
-  { id: 'Mini Dólar', name: 'Mini Dólar', subtitle: 'Coming Soon', image: nationalComingSoon, comingSoon: true },
+const portfolioRobots: RobotItem[] = [
+  { id: 'BTC/USD', name: 'Viking Alpha', subtitle: 'Ragnar Edition – BTC/USD', image: vikingAlphaBtcusd, bitcoinIcon: true },
+  { id: 'DAX', name: 'Viking Alpha', subtitle: 'Ivar Edition – DAX (DE40)', image: vikingAlphaDax, flag: '🇩🇪' },
+  { id: 'USATEC', name: 'Viking Alpha', subtitle: 'USATEC', image: forexComingSoon, comingSoon: true, flag: '🇺🇸' },
+  { id: 'HK50', name: 'Viking Alpha', subtitle: 'HK50', image: forexComingSoon, comingSoon: true, flag: '🇭🇰' },
 ];
 
 const RobotList = ({
@@ -82,7 +80,24 @@ const RobotList = ({
         </div>
 
         <div className="flex-1 min-w-0">
-          <h4 className="font-montserrat font-bold text-foreground text-sm">{robot.name}</h4>
+          <h4 className="font-montserrat font-bold text-foreground text-sm flex items-center gap-2 flex-wrap">
+            {robot.bitcoinIcon && (
+              <span
+                className="inline-flex items-center justify-center w-5 h-5 rounded-full font-bold text-[11px]"
+                style={{ background: 'linear-gradient(135deg, #f7931a, #ffd700)', color: '#fff' }}
+                aria-label="Bitcoin"
+              >
+                ₿
+              </span>
+            )}
+            {robot.flag && <span className="text-base leading-none">{robot.flag}</span>}
+            <span>{robot.name}</span>
+            {robot.comingSoon && (
+              <span className="text-[9px] font-montserrat font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-foreground/10 text-muted">
+                Coming Soon
+              </span>
+            )}
+          </h4>
           <p className="text-muted text-xs font-montserrat">{robot.subtitle}</p>
         </div>
 
@@ -159,46 +174,29 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        {/* Market groups */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-xl overflow-hidden border border-foreground/10">
-            <div
-              className="px-5 py-3 font-montserrat font-bold text-sm text-white uppercase tracking-wider"
-              style={{ backgroundColor: '#1a5fa8' }}
-            >
-              International Market
-            </div>
-            <div className="bg-card">
-              <RobotList
-                robots={internationalRobots}
-                onSelect={setSelectedRobot}
-                buttonStyle={{
-                  backgroundColor: '#d4d4d4',
-                  color: '#1a1a1a',
-                  boxShadow: '0 4px 0 #aaaaaa',
-                }}
-              />
-            </div>
+        {/* Our Portfolio */}
+        <div className="text-center mb-8">
+          <span className="inline-block bg-primary/10 text-primary font-montserrat text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+            Our Portfolio
+          </span>
+        </div>
+        <div className="rounded-xl overflow-hidden border border-foreground/10 max-w-3xl mx-auto">
+          <div
+            className="px-5 py-3 font-montserrat font-bold text-sm text-white uppercase tracking-wider"
+            style={{ backgroundColor: '#1a5fa8' }}
+          >
+            Our Portfolio
           </div>
-
-          <div className="rounded-xl overflow-hidden border border-foreground/10">
-            <div
-              className="px-5 py-3 font-montserrat font-bold text-sm text-white uppercase tracking-wider"
-              style={{ backgroundColor: '#3a7d1e' }}
-            >
-              National Market
-            </div>
-            <div className="bg-card">
-              <RobotList
-                robots={nationalRobots}
-                onSelect={setSelectedRobot}
-                buttonStyle={{
-                  backgroundColor: '#ffd000',
-                  color: '#1a1a1a',
-                  boxShadow: '0 4px 0 #b38a00',
-                }}
-              />
-            </div>
+          <div className="bg-card">
+            <RobotList
+              robots={portfolioRobots}
+              onSelect={setSelectedRobot}
+              buttonStyle={{
+                backgroundColor: '#d4d4d4',
+                color: '#1a1a1a',
+                boxShadow: '0 4px 0 #aaaaaa',
+              }}
+            />
           </div>
         </div>
       </div>
