@@ -39,11 +39,13 @@ interface RobotItem {
   comingSoon?: boolean;
   flag?: string;
   bitcoinIcon?: boolean;
+  goldIcon?: boolean;
 }
 
 const portfolioRobots: RobotItem[] = [
   { id: 'BTC/USD', name: 'Viking Alpha', subtitle: 'Ragnar Edition – BTC/USD', image: vikingAlphaBtcusd, bitcoinIcon: true },
   { id: 'DAX', name: 'Viking Alpha', subtitle: 'Ivar Edition – DAX (DE40)', image: vikingAlphaDax, flag: '🇩🇪' },
+  { id: 'GOLD', name: 'Viking Alpha Gold', subtitle: 'Precision trading on the world\'s safe haven asset – XAU/USD', image: forexComingSoon, comingSoon: true, goldIcon: true },
   { id: 'USATEC', name: 'Viking Alpha', subtitle: 'USATEC', image: forexComingSoon, comingSoon: true, flag: '🇺🇸' },
   { id: 'HK50', name: 'Viking Alpha', subtitle: 'HK50', image: forexComingSoon, comingSoon: true, flag: '🇭🇰' },
 ];
@@ -88,6 +90,15 @@ const RobotList = ({
                 aria-label="Bitcoin"
               >
                 ₿
+              </span>
+            )}
+            {robot.goldIcon && (
+              <span
+                className="inline-flex items-center justify-center w-5 h-5 rounded-full font-bold text-[11px]"
+                style={{ background: 'linear-gradient(135deg, #b8860b, #ffd700)', color: '#fff' }}
+                aria-label="Gold"
+              >
+                🥇
               </span>
             )}
             {robot.flag && <span className="text-base leading-none">{robot.flag}</span>}
