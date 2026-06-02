@@ -44,13 +44,6 @@ const Navbar = ({ onStartFree }: NavbarProps) => {
         <div className="flex items-center gap-4">
           <button
             onClick={onStartFree}
-            className="hidden md:inline-block font-montserrat font-bold text-sm transition-colors hover:brightness-110"
-            style={{ color: '#a8ff3e' }}
-          >
-            Free Demo
-          </button>
-          <button
-            onClick={onStartFree}
             className="bg-primary hover:brightness-110 text-primary-foreground px-6 py-2.5 rounded-full font-montserrat font-bold text-sm transition-all active:scale-95 shadow-[0_4px_0_0_hsl(74,100%,33%),0_8px_24px_hsl(74,100%,43%,0.2)]
               hover:shadow-[0_3px_0_0_hsl(74,100%,33%),0_6px_20px_hsl(74,100%,43%,0.4)]
               hover:translate-y-[1px] active:translate-y-[3px] active:shadow-[0_1px_0_0_hsl(74,100%,33%)]"
@@ -80,13 +73,6 @@ const Navbar = ({ onStartFree }: NavbarProps) => {
               {link.label}
             </a>
           ))}
-          <button
-            onClick={() => { setMobileOpen(false); onStartFree?.(); }}
-            className="font-montserrat text-base font-bold block py-2"
-            style={{ color: '#a8ff3e' }}
-          >
-            Free Demo
-          </button>
         </div>
       )}
     </nav>
