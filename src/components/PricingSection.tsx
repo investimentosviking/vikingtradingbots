@@ -98,6 +98,31 @@ const PricingSection = () => {
               </a>
             </div>
           </div>
+          <div className="flex-1 min-w-[240px] max-w-[280px] rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-200 cursor-pointer flex flex-col">
+            <div className="px-5 py-4 text-center" style={{background:'linear-gradient(135deg,#8a6a1a,#b8860b)'}}>
+              <p className="font-montserrat font-bold text-white text-base">All-Access Pass</p>
+              <p className="font-opensans text-white/80 text-[11px] mt-0.5">All Viking EAs included</p>
+            </div>
+            <div className="px-5 py-6 flex flex-col gap-4 flex-1" style={{background:'linear-gradient(135deg,#1a1a1a,#2a2010)',boxShadow:'0 6px 0 #5a4310',borderRadius:'0 0 16px 16px',border:'1px solid rgba(245,197,66,0.3)',borderTop:'none'}}>
+              <div className="text-center">
+                <p className="font-opensans text-white/60 text-xs">Starting from:</p>
+                <p className="font-montserrat font-bold text-3xl" style={{color:'#f5c542'}}>$299</p>
+                <p className="font-opensans text-white/70 text-xs mt-1">semi-annual</p>
+                <p className="font-montserrat font-bold text-lg mt-2" style={{color:'#f5c542'}}>$499 <span className="text-xs font-opensans text-white/70">/ annual · best value</span></p>
+              </div>
+              <div className="border-t border-white/20 pt-4 flex flex-col gap-2">
+                {['Access to all active Viking EAs (DAX + Gold + BTC)','1 MT5 license per EA','Updates included','Priority support','WhatsApp support'].map(item => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{background:'#f5c542'}} />
+                    <span className="font-opensans text-white text-xs">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <a href="https://wa.me/5551997337388" target="_blank" rel="noopener noreferrer" className="mt-2 block text-center font-montserrat font-bold text-sm py-2.5 rounded-xl transition-all" style={{background:'#f5c542',color:'#1a1a1a'}}>
+                Chat on WhatsApp ↗
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
