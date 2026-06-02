@@ -24,7 +24,7 @@ const DESCRIPTIONS = {
 
 const DEFAULT_BTCUSD: RiskCard[] = [
   {
-    capital: '$150',
+    capital: '$300',
     lotSize: '0.01 DAX lot size',
     badgeLabel: 'High risk',
     badgeColor: '#d97706',
@@ -39,7 +39,7 @@ const DEFAULT_BTCUSD: RiskCard[] = [
     ],
   },
   {
-    capital: '$300',
+    capital: '$500',
     lotSize: '0.01 DAX lot size',
     badgeLabel: 'Medium risk',
     badgeColor: '#2563eb',
@@ -54,7 +54,7 @@ const DEFAULT_BTCUSD: RiskCard[] = [
     ],
   },
   {
-    capital: '$500',
+    capital: '$800',
     lotSize: '0.01 DAX lot size',
     badgeLabel: 'Low risk',
     badgeColor: '#16a34a',
