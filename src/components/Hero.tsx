@@ -59,30 +59,6 @@ const Hero = ({ onStartFree }: HeroProps) => (
           >
             Start Free
           </button>
-          <a
-            href="#live-performance"
-            className="relative px-8 py-3 rounded-full font-montserrat font-bold text-sm
-              border-2 border-primary text-foreground
-              shadow-[0_4px_0_0_hsl(74,100%,33%,0.3),0_8px_24px_hsl(74,100%,43%,0.1)]
-              hover:bg-primary hover:text-primary-foreground
-              hover:shadow-[0_3px_0_0_hsl(74,100%,33%),0_6px_20px_hsl(74,100%,43%,0.4)]
-              hover:translate-y-[1px] active:translate-y-[3px]
-              transition-all duration-150 select-none"
-          >
-            View Performance
-          </a>
-          <a
-            href="#viking-management"
-            className="relative px-8 py-3 rounded-full font-montserrat font-bold text-sm
-              border-2 border-primary text-foreground
-              shadow-[0_4px_0_0_hsl(74,100%,33%,0.3),0_8px_24px_hsl(74,100%,43%,0.1)]
-              hover:bg-primary hover:text-primary-foreground
-              hover:shadow-[0_3px_0_0_hsl(74,100%,33%),0_6px_20px_hsl(74,100%,43%,0.4)]
-              hover:translate-y-[1px] active:translate-y-[3px]
-              transition-all duration-150 select-none"
-          >
-            Viking Management
-          </a>
         </div>
         <p className="font-opensans text-xs" style={{ color: '#8892b0' }}>
           No credit card required • Instant demo access

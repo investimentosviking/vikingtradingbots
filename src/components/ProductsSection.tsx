@@ -47,9 +47,9 @@ interface RobotItem {
 }
 
 const portfolioRobots: RobotItem[] = [
+  { id: 'GOLD', name: 'Viking Lagertha Gold Edition', subtitle: 'Lagertha Edition — XAU/USD', image: vikingLagerthaGold, badge: flagGold },
   { id: 'DAX', name: 'Viking Alpha DAX', subtitle: 'Ivar Edition — DAX (DE40)', image: vikingAlphaDax, badge: flagDe },
   { id: 'BTC/USD', name: 'Viking Alpha', subtitle: 'Ragnar Edition – BTC/USD', image: forexComingSoon, badge: flagBtc },
-  { id: 'GOLD', name: 'Viking Lagertha Gold Edition', subtitle: 'Lagertha Edition — XAU/USD', image: vikingLagerthaGold, badge: flagGold },
   { id: 'USATEC', name: 'Viking Alpha', subtitle: 'USATEC', image: forexComingSoon, badge: flagUs, comingSoon: true },
   { id: 'HK50', name: 'Viking Alpha', subtitle: 'HK50', image: forexComingSoon, badge: flagHk, comingSoon: true },
 ];
@@ -91,7 +91,7 @@ const RobotList = ({
               src={robot.badge}
               alt=""
               loading="lazy"
-              className="h-7 w-auto max-w-[72px] object-contain rounded-sm drop-shadow-md flex-shrink-0"
+              className="h-14 w-auto max-w-[144px] object-contain rounded-sm drop-shadow-md flex-shrink-0"
             />
             <span>{robot.name}</span>
             {robot.comingSoon && (
