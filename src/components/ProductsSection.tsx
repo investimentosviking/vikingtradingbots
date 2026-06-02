@@ -3,6 +3,7 @@ import { ShieldCheck, TrendingUp, Layers, SplitSquareHorizontal } from 'lucide-r
 import RobotReportModal from './RobotReportModal';
 import vikingAlphaBtcusd from '@/assets/viking-alpha-btcusd.png';
 import vikingAlphaDax from '@/assets/viking-alpha-dax.png';
+import vikingLagerthaGold from '@/assets/viking-lagertha-gold.jpeg';
 import forexComingSoon from '@/assets/forex-coming-soon.png';
 import flagDe from '@/assets/flag-de.png';
 import flagBtc from '@/assets/flag-btc.png';
@@ -48,7 +49,7 @@ interface RobotItem {
 const portfolioRobots: RobotItem[] = [
   { id: 'DAX', name: 'Viking Alpha DAX', subtitle: 'Ivar Edition — DAX (DE40)', image: vikingAlphaDax, badge: flagDe },
   { id: 'BTC/USD', name: 'Viking Alpha', subtitle: 'Ragnar Edition – BTC/USD', image: forexComingSoon, badge: flagBtc },
-  { id: 'GOLD', name: 'Viking Lagertha Gold Edition', subtitle: 'Lagertha Edition — XAU/USD', image: forexComingSoon, badge: flagGold },
+  { id: 'GOLD', name: 'Viking Lagertha Gold Edition', subtitle: 'Lagertha Edition — XAU/USD', image: vikingLagerthaGold, badge: flagGold },
   { id: 'USATEC', name: 'Viking Alpha', subtitle: 'USATEC', image: forexComingSoon, badge: flagUs, comingSoon: true },
   { id: 'HK50', name: 'Viking Alpha', subtitle: 'HK50', image: forexComingSoon, badge: flagHk, comingSoon: true },
 ];
