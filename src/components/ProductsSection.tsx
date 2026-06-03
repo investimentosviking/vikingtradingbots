@@ -65,34 +65,10 @@ const RobotList = ({
 }) => (
   <div className="divide-y divide-foreground/10">
     {robots.map((robot) => (
-      <div
-        key={robot.id}
-        className="flex items-center gap-4 p-4"
-      >
-        <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-foreground/5">
-          {robot.image ? (
-            <img
-              src={robot.image}
-              alt={`${robot.name} - ${robot.subtitle}`}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-muted text-[10px] font-montserrat font-bold uppercase tracking-wider">
-                Coming Soon
-              </span>
-            </div>
-          )}
-        </div>
-
-        <div className="flex-1 min-w-0">
-          <h4 className="font-montserrat font-bold text-foreground text-sm flex items-center gap-2 flex-wrap">
-            <img
-              src={robot.badge}
-              alt=""
-              loading="lazy"
-              className="h-14 w-auto max-w-[144px] object-contain rounded-sm drop-shadow-md flex-shrink-0"
-            />
+      <div key={robot.id} className="p-4">
+        {/* Mobile layout */}
+        <div className="md:hidden">
+          <h4 className="font-montserrat font-bold text-foreground text-sm mb-3 flex items-center gap-2 flex-wrap">
             <span>{robot.name}</span>
             {robot.comingSoon && (
               <span className="text-[9px] font-montserrat font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-foreground/10 text-muted">
@@ -100,21 +76,77 @@ const RobotList = ({
               </span>
             )}
           </h4>
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-foreground/5">
+              {robot.image ? (
+                <img src={robot.image} alt={`${robot.name} - ${robot.subtitle}`} className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-muted text-[10px] font-montserrat font-bold uppercase tracking-wider">Coming Soon</span>
+                </div>
+              )}
+            </div>
+            <img
+              src={robot.badge}
+              alt=""
+              loading="lazy"
+              className="h-14 w-auto max-w-[144px] object-contain rounded-sm drop-shadow-md flex-shrink-0"
+            />
+            <button
+              onClick={() => !robot.comingSoon && onSelect(robot.id)}
+              className={`ml-auto font-montserrat font-bold text-sm px-5 py-2.5 rounded-lg transition-all flex-shrink-0 ${
+                robot.comingSoon ? 'opacity-50 cursor-default' : 'hover:-translate-y-[3px] active:translate-y-0 cursor-pointer'
+              }`}
+              style={buttonStyle}
+              disabled={robot.comingSoon}
+            >
+              {robot.id}
+            </button>
+          </div>
           <p className="text-muted text-xs font-montserrat">{robot.subtitle}</p>
         </div>
 
-        <button
-          onClick={() => !robot.comingSoon && onSelect(robot.id)}
-          className={`font-montserrat font-bold text-sm px-5 py-2.5 rounded-lg transition-all flex-shrink-0 ${
-            robot.comingSoon
-              ? 'opacity-50 cursor-default'
-              : 'hover:-translate-y-[3px] active:translate-y-0 cursor-pointer'
-          }`}
-          style={buttonStyle}
-          disabled={robot.comingSoon}
-        >
-          {robot.id}
-        </button>
+        {/* Desktop layout */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-foreground/5">
+            {robot.image ? (
+              <img src={robot.image} alt={`${robot.name} - ${robot.subtitle}`} className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-muted text-[10px] font-montserrat font-bold uppercase tracking-wider">Coming Soon</span>
+              </div>
+            )}
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <h4 className="font-montserrat font-bold text-foreground text-sm flex items-center gap-2 flex-wrap">
+              <img
+                src={robot.badge}
+                alt=""
+                loading="lazy"
+                className="h-14 w-auto max-w-[144px] object-contain rounded-sm drop-shadow-md flex-shrink-0"
+              />
+              <span>{robot.name}</span>
+              {robot.comingSoon && (
+                <span className="text-[9px] font-montserrat font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-foreground/10 text-muted">
+                  Coming Soon
+                </span>
+              )}
+            </h4>
+            <p className="text-muted text-xs font-montserrat">{robot.subtitle}</p>
+          </div>
+
+          <button
+            onClick={() => !robot.comingSoon && onSelect(robot.id)}
+            className={`font-montserrat font-bold text-sm px-5 py-2.5 rounded-lg transition-all flex-shrink-0 ${
+              robot.comingSoon ? 'opacity-50 cursor-default' : 'hover:-translate-y-[3px] active:translate-y-0 cursor-pointer'
+            }`}
+            style={buttonStyle}
+            disabled={robot.comingSoon}
+          >
+            {robot.id}
+          </button>
+        </div>
       </div>
     ))}
   </div>
